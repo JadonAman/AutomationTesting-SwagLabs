@@ -53,6 +53,11 @@
             <version>5.1.2</version>
         </dependency>
 
+        <dependency>
+        	<groupId>automation</groupId>
+        	<artifactId>SeleniumFramework</artifactId>
+        	<version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
