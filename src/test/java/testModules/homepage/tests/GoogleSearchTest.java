@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
-import testModules.homepage.pages.GoogleHomePage;
+import pages.GoogleHomePage;
 
 public class GoogleSearchTest extends BaseTest {
 
