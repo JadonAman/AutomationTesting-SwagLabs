@@ -16,6 +16,8 @@
             
             <class name="testModules.user_support.tests.CommunityPageTest"/>
 
+            <class name="testModules.LoginTest"/>
+
         </classes>
 
     </test>
