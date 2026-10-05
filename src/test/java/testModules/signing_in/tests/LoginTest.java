@@ -1,4 +1,4 @@
-package testModules;
+package testModules.signing_in.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
