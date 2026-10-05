@@ -1,16 +1,12 @@
-# 🚀 Swag Labs Automation Framework
-
 <div align="center">
+
+# 🚀 Swag Labs Automation Framework
 
 ### Selenium Automation Testing Project
 
-Automated testing framework designed for learning, training, and demonstrating industry-standard test automation practices.
+![Status](https://img.shields.io/badge/Status-Active-success) ![Java](https://img.shields.io/badge/Java-21-orange) ![Selenium](https://img.shields.io/badge/Selenium-Automation-green) ![TestNG](https://img.shields.io/badge/TestNG-Framework-red) ![Maven](https://img.shields.io/badge/Maven-Build)
 
-![Status](https://imgo/badge/Status-Active-success
-![Java](https://img.shields.io/badge/Javage
-![Selenium](https://img.shields.enium-Automation-green
-![TestNG](https://img.shields.io/badge/mework-red
-![Maven](https://img.shields.io/badge/ld-blue
+Automated testing framework designed for learning, training, and demonstrating industry-standard test automation practices.
 
 </div>
 
@@ -20,13 +16,13 @@ Automated testing framework designed for learning, training, and demonstrating i
 
 This project automates key user journeys of the **Swag Labs (SauceDemo)** application using Selenium WebDriver and the Page Object Model (POM).
 
-The framework is structured to be:
+The framework is designed to be:
 
 - ✅ Scalable
 - ✅ Reusable
 - ✅ Maintainable
 - ✅ Easy to Extend
-- ✅ Beginner Friendly
+- ✅ Industry-Oriented
 
 ---
 
@@ -50,6 +46,7 @@ The framework is structured to be:
 - Application Launch
 - Homepage Validation
 - URL Verification
+- Page Accessibility
 - User Navigation
 
 ---
@@ -60,7 +57,8 @@ The framework is structured to be:
 
 - Valid Login
 - Invalid Login
-- Empty Credentials Validation
+- Empty Username Validation
+- Empty Password Validation
 - Error Message Verification
 - Session Authentication
 
@@ -71,10 +69,10 @@ The framework is structured to be:
 ### Features Covered
 
 - Product Listing
-- Product Information Display
-- Product Selection
+- Product Information Validation
 - Product Sorting
-- Inventory Validation
+- Product Selection
+- Inventory Verification
 
 ---
 
@@ -83,9 +81,10 @@ The framework is structured to be:
 ### Features Covered
 
 - Add Product to Cart
-- Remove Product
-- Cart Verification
+- Remove Product from Cart
+- Shopping Cart Verification
 - Checkout Process
+- Order Review
 - Order Completion
 - Order Confirmation
 
@@ -98,107 +97,128 @@ The framework is structured to be:
 #### 📞 Contact Sales
 
 - Contact page accessibility
-- Contact information validation
-- Navigation verification
+- Contact information verification
+- Navigation validation
 
 #### 📧 General Enquiries
 
-- Enquiries page validation
-- Email information verification
-- Contact page availability
+- Contact page validation
+- General enquiry information verification
+- Email availability validation
 
 #### 🛠️ Contact Support
 
 - Support page accessibility
+- Support information validation
 - Support resource verification
-- User assistance validation
 
 #### 🌐 Community Resources
 
 - Community page accessibility
 - Resource availability validation
-- Knowledge sharing portal verification
+- Knowledge hub verification
 
 ---
 
 # 🏗️ Framework Highlights
 
-### Page Object Model (POM)
+### 📄 Page Object Model (POM)
 
-Encapsulates web elements and actions within dedicated page classes, making the framework easier to maintain and update.
+Encapsulates page elements and actions into dedicated page classes, improving maintainability and readability.
 
-### Modular Design
+### ♻️ Reusable Components
 
-Each business functionality is organized into separate modules for improved readability and scalability.
+Common utilities, setup, and configurations are shared across modules to reduce duplication.
 
-### Reusable Components
+### 📦 Modular Architecture
 
-Common setup and utilities are shared across all test modules to minimize duplication.
+Test cases are organized module-wise to support scalability and easier maintenance.
 
-### Maintainable Structure
+### 🚀 Extensible Design
 
-Designed to support long-term automation growth and future enhancements.
+New pages, tests, and utilities can be added with minimal framework changes.
 
 ---
 
 # ✅ Validation Areas
-
+ 
 ### Functional Validation
-
+ 
 - User Authentication
 - Product Management
 - Shopping Workflow
 - Navigation Flow
-- User Support Resources
-
+- User Support Features
+ 
 ### UI Validation
-
+ 
 - Element Visibility
 - Page Accessibility
-- Navigation Availability
 - Content Verification
-
+- Navigation Verification
+ 
 ### End-to-End Validation
-
-- Login to Logout Flow
-- Product Purchase Journey
+ 
+- Login to Purchase Flow
+- Product Selection Journey
 - User Support Navigation
-
+ 
 ---
-
+ 
 # 🎓 Learning Outcomes
-
+ 
 This project demonstrates practical experience in:
-
+ 
 - Selenium WebDriver
+- Java Automation
 - TestNG
 - Maven
-- Test Automation Framework Design
 - Page Object Model
-- Test Execution Management
+- Test Automation Framework Design
 - Real-World Automation Practices
-
+- End-to-End Testing
+ 
 ---
-
+ 
 # 📈 Future Enhancements
-
+ 
 - Data Driven Testing
+- Excel Integration
 - Cross Browser Testing
 - Parallel Execution
-- Selenium Grid Integration
+- Selenium Grid
 - CI/CD Integration
-- Cloud Execution
-- Advanced Reporting
-- Screenshot Management
 - Docker Support
-
+- Advanced Reporting
+- Jenkins Integration
+- Cloud Execution
+ 
 ---
-
+ 
 # 📋 Notes
-
+ 
 > This project is intended for educational and training purposes.
-
+ 
 > Swag Labs and Sauce Labs resources are public applications used solely for automation practice and framework development.
-
-> Community and support pages are validated based on publicly accessible resources available at the time of testing.
-
+ 
+> Community, support, and contact pages are validated using publicly accessible Sauce Labs resources available at the time of testing.
+ 
+---
+ 
+# 👨‍💻 Author
+ 
+**Aman Jadon**
+ 
+Automation Testing Framework Project using Selenium, Java, TestNG, Maven, and the Page Object Model.
+ 
+---
+ 
+<div align="center">
+ 
+### 🎉 Happy Testing!
+ 
+Building automation skills one test at a time.
+ 
+⭐ Star the repository if you found it useful.
+ 
+</div>
