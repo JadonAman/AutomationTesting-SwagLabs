@@ -17,3 +17,4 @@ public class LoginCredentials {
     public static final String LOCKED_OUT_USER =
             "locked_out_user";
 }
+}
