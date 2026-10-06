@@ -2,9 +2,9 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="UserSupportSuite">
+<suite name="UserSupportSuite" parallel="classes" thread-count="6">
 
-    <test name="UserSupportTests">
+    <test name="SwagLabsAutomationTesting">
 
         <classes>
 
@@ -18,7 +18,19 @@
             <class name="testModules.user_support.tests.CommunityPageTest"/>
 			
 			<!-- Login Module -->
-            <class name="testModules.signing_in.tests.LoginTest"/>
+			<class name="testModules.signing_in.tests.LoginPageElementsTest"/>
+			
+            <class name="testModules.signing_in.tests.EmptyPasswordTest"/>
+            
+            <class name="testModules.signing_in.tests.EmptyUsernameTest"/>
+            
+            <class name="testModules.signing_in.tests.InvalidPasswordTest"/>
+            
+            <class name="testModules.signing_in.tests.InvalidUsernameTest"/>
+            
+            <class name="testModules.signing_in.tests.LockedOutUserTest"/>
+            
+            <class name="testModules.signing_in.tests.ValidLoginTest"/>
             
             <!-- Purchase Module -->
             <class name="testModules.purchase.tests.AddProductsToCartTest"/>
