@@ -39,7 +39,41 @@ public class BaseTest {
                 extent.createTest(
                         result.getMethod().getMethodName());
 
-        test.assignAuthor("Aman Jadon");
+        String className =
+                result.getTestClass()
+                        .getName()
+                        .toLowerCase();
+
+        if (className.contains("user_support")) {
+
+            test.assignAuthor("Aman Jadon");
+            test.assignCategory("User Support");
+        }
+        else if (className.contains("product_catalog")) {
+
+            test.assignAuthor("Priyanshi Gupta");
+            test.assignCategory("Product Catalog");
+        }
+        else if (className.contains("purchase")) {
+
+            test.assignAuthor("Abhishek");
+            test.assignCategory("Purchase");
+        }
+        else if (className.contains("homepage")) {
+
+            test.assignAuthor("Pramod");
+            test.assignCategory("Homepage");
+        }
+        else if (className.contains("signing_in")) {
+
+            test.assignAuthor("Ashutosh");
+            test.assignCategory("Signing In");
+        }
+        else {
+
+            test.assignAuthor("Automation Team");
+            test.assignCategory("General");
+        }
 
         ExtentTestManager.setTest(test);
 

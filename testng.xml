@@ -51,6 +51,22 @@
             <class name="testModules.homepage.tests.HomePageElementsTest"/>
             
             <class name="testModules.homepage.tests.HomePageNavigationTest"/>
+            
+            <!-- Product Catalog Module -->
+
+			<class name="testModules.product_catalog.tests.A_to_Ztesting"/>
+			
+			<class name="testModules.product_catalog.tests.CategoryFilterTest"/>
+			
+			<class name="testModules.product_catalog.tests.CHECKSORTZATest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceHighToLowTest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceLowToHighTest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceRangeTest"/>
+			
+			<class name="testModules.product_catalog.tests.ProductNameSearchTest"/>
 
         </classes>
 
