@@ -14,24 +14,48 @@ public class ExtentManager {
 
         if (extent == null) {
 
-            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
-                    .format(new Date());
+            String timeStamp =
+                    new SimpleDateFormat("yyyyMMdd_HHmmss")
+                            .format(new Date());
 
-            String reportPath = System.getProperty("user.dir")
+            String reportPath =
+                    System.getProperty("user.dir")
                     + "/reports/AutomationReport_"
                     + timeStamp
                     + ".html";
 
-            ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
+            ExtentSparkReporter spark =
+                    new ExtentSparkReporter(reportPath);
 
-            spark.config().setDocumentTitle("Automation Report");
-            spark.config().setReportName("Selenium Test Execution Report");
+            spark.config().setDocumentTitle(
+                    "Swag Labs Automation Report");
+
+            spark.config().setReportName(
+                    "Automation Testing Execution Report");
 
             extent = new ExtentReports();
+
             extent.attachReporter(spark);
 
-            extent.setSystemInfo("Framework", "Selenium TestNG");
-            extent.setSystemInfo("Team", "Automation Team");
+            extent.setSystemInfo(
+                    "Project",
+                    "Swag Labs Automation");
+
+            extent.setSystemInfo(
+                    "Framework",
+                    "Selenium + TestNG");
+
+            extent.setSystemInfo(
+                    "Author",
+                    "Aman Jadon");
+
+            extent.setSystemInfo(
+                    "Browser",
+                    ConfigReader.getProperty("browser"));
+
+            extent.setSystemInfo(
+                    "Application",
+                    "https://www.saucedemo.com");
         }
 
         return extent;

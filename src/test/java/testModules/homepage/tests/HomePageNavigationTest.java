@@ -6,12 +6,15 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class HomePageNavigationTest extends BaseTest {
 
     @Test
     public void verifyHomePageNavigation()
             throws InterruptedException {
+
+        ReportLogger.step("Login with valid credentials");
 
         LoginPage loginPage = new LoginPage(driver);
 
@@ -27,10 +30,15 @@ public class HomePageNavigationTest extends BaseTest {
                 "Homepage was not displayed after successful login"
         );
 
+        ReportLogger.pass("Login successful and homepage loaded");
+
         InventoryPage inventoryPage =
                 new InventoryPage(driver);
 
-        // Navigate to All Items / Homepage
+        Thread.sleep(2000);
+
+        ReportLogger.step("Navigate to All Items page");
+
         inventoryPage.clickAllItems();
 
         Thread.sleep(2000);
@@ -40,11 +48,11 @@ public class HomePageNavigationTest extends BaseTest {
                 "User could not navigate to All Items/Home page"
         );
 
-        System.out.println(
-                "All Items/Home navigation verified successfully"
-        );
+        ReportLogger.pass(
+                "All Items/Home page navigation verified successfully");
 
-        // Navigate to Cart
+        ReportLogger.step("Navigate to Cart page");
+
         inventoryPage.openCart();
 
         Thread.sleep(2000);
@@ -54,11 +62,11 @@ public class HomePageNavigationTest extends BaseTest {
                 "User could not navigate to Cart page"
         );
 
-        System.out.println(
-                "Cart navigation verified successfully"
-        );
+        ReportLogger.pass(
+                "Cart page navigation verified successfully");
 
-        // Return to Homepage
+        ReportLogger.step("Return to Homepage");
+
         driver.navigate().back();
 
         Thread.sleep(2000);
@@ -68,8 +76,7 @@ public class HomePageNavigationTest extends BaseTest {
                 "User could not return to Homepage"
         );
 
-        System.out.println(
-                "Return to Homepage verified successfully"
-        );
+        ReportLogger.pass(
+                "Return to Homepage verified successfully");
     }
 }

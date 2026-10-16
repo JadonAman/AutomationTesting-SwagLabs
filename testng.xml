@@ -7,8 +7,8 @@
     <test name="SwagLabsAutomationTesting">
 
         <classes>
-
-			<!-- User Support Module -->
+        	
+        	<!-- User Support Module -->
             <class name="testModules.user_support.tests.ContactSalesTest"/>
 
             <class name="testModules.user_support.tests.GeneralEnquiriesTest"/>
@@ -16,6 +16,8 @@
             <class name="testModules.user_support.tests.ContactSupportTest"/>
             
             <class name="testModules.user_support.tests.CommunityPageTest"/>
+            
+            <class name="testModules.user_support.tests.ContactSalesTestFail"/>
 			
 			<!-- Login Module -->
 			<class name="testModules.signing_in.tests.LoginPageElementsTest"/>
@@ -43,7 +45,12 @@
             
             <class name="testModules.purchase.tests.PaymentTest"/>
             
+            <!-- Home Page -->
+            <class name="testModules.homepage.tests.HomePageDisplayTest"/>
             
+            <class name="testModules.homepage.tests.HomePageElementsTest"/>
+            
+            <class name="testModules.homepage.tests.HomePageNavigationTest"/>
 
         </classes>
 

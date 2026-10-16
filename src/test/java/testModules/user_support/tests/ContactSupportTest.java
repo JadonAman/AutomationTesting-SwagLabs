@@ -9,34 +9,40 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class ContactSupportTest extends BaseTest {
 
     @Test
     public void verifyContactSupportPage() throws InterruptedException {
 
-        // Login
+        ReportLogger.step("Login with valid credentials");
+
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.login(
                 "standard_user",
-                "secret_sauce"
-        );
+                "secret_sauce");
 
         Thread.sleep(1000);
 
-        // Verify Inventory Page
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("inventory")
-        );
+                driver.getCurrentUrl().contains("inventory"));
+
+        ReportLogger.pass("Login successful");
+
+        ReportLogger.step("Open application menu");
 
         InventoryPage inventoryPage =
                 new InventoryPage(driver);
 
-        // Same flow as Selenium IDE
         inventoryPage.openMenu();
 
         Thread.sleep(1000);
+
+        ReportLogger.pass("Menu opened successfully");
+
+        ReportLogger.step("Navigate to Sauce Labs website");
 
         driver.findElement(
                 By.cssSelector(
@@ -45,9 +51,12 @@ public class ContactSupportTest extends BaseTest {
 
         Thread.sleep(3000);
 
-        // Store parent window
+        ReportLogger.pass("Sauce Labs website opened");
+
         String parentWindow =
                 driver.getWindowHandle();
+
+        ReportLogger.step("Open Support page");
 
         driver.findElement(
                 By.linkText("Support"))
@@ -55,7 +64,6 @@ public class ContactSupportTest extends BaseTest {
 
         Thread.sleep(3000);
 
-        // Switch to new tab
         Set<String> windows =
                 driver.getWindowHandles();
 
@@ -70,15 +78,13 @@ public class ContactSupportTest extends BaseTest {
 
         Thread.sleep(2000);
 
-        // Verify Support page
+        ReportLogger.step("Verify Support page");
+
         Assert.assertTrue(
                 driver.getCurrentUrl()
                         .contains("support"),
-                "Support page not opened"
-        );
+                "Support page not opened");
 
-        System.out.println(
-                "Support URL : "
-                + driver.getCurrentUrl());
+        ReportLogger.pass("Support page verified successfully");
     }
 }

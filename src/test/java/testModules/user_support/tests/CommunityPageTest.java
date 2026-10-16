@@ -6,13 +6,15 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class CommunityPageTest extends BaseTest {
 
     @Test
     public void verifyCommunityResourcesPage() throws InterruptedException {
 
-        // Login
+        ReportLogger.step("Login with valid credentials");
+
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
 
@@ -20,30 +22,41 @@ public class CommunityPageTest extends BaseTest {
                 driver.getCurrentUrl().contains("inventory"),
                 "Login Failed");
 
-        // Open Menu
+        ReportLogger.pass("Login successful");
+
+        ReportLogger.step("Open application menu");
+
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.openMenu();
 
         Thread.sleep(1000);
 
-        // Click About
+        ReportLogger.pass("Menu opened successfully");
+
+        ReportLogger.step("Navigate to Sauce Labs website");
+
         driver.findElement(
                 org.openqa.selenium.By.id("about_sidebar_link"))
                 .click();
 
         Thread.sleep(3000);
 
-        // Open Community Resources Page
+        ReportLogger.pass("Sauce Labs website opened");
+
+        ReportLogger.step("Open Community Resources page");
+
         driver.get("https://saucelabs.com/resources/topic-hub/community");
 
         Thread.sleep(3000);
 
-        // Validation
+        ReportLogger.pass("Community Resources page opened");
+
+        ReportLogger.step("Verify Community Resources page");
+
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("community"),
                 "Community Resources page not opened");
 
-        System.out.println("Community Resources page verified successfully");
-        System.out.println("Current URL : " + driver.getCurrentUrl());
+        ReportLogger.pass("Community Resources page verified successfully");
     }
 }

@@ -102,8 +102,13 @@ public class InventoryPage {
 
         openMenu();
 
-        driver.findElement(allItemsLink)
-                .click();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        driver.findElement(allItemsLink).click();
     }
 
     public void clickAbout() {

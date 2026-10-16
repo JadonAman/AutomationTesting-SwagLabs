@@ -6,12 +6,15 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class HomePageDisplayTest extends BaseTest {
 
     @Test
     public void verifyHomePageDisplayedAfterLogin()
             throws InterruptedException {
+
+        ReportLogger.step("Login with valid credentials");
 
         LoginPage loginPage = new LoginPage(driver);
 
@@ -27,6 +30,10 @@ public class HomePageDisplayTest extends BaseTest {
                 "Homepage was not displayed after successful login"
         );
 
+        ReportLogger.pass("Login successful and homepage loaded");
+
+        ReportLogger.step("Verify Products page title");
+
         InventoryPage inventoryPage =
                 new InventoryPage(driver);
 
@@ -36,13 +43,17 @@ public class HomePageDisplayTest extends BaseTest {
                 "Products title is not displayed"
         );
 
-        System.out.println(
-                "Homepage displayed successfully"
+        ReportLogger.pass("Products page title verified successfully");
+
+        ReportLogger.step("Verify homepage URL");
+
+        Assert.assertTrue(
+                driver.getCurrentUrl().contains("inventory"),
+                "Inventory URL is not displayed"
         );
 
-        System.out.println(
-                "Current URL : "
-                        + driver.getCurrentUrl()
-        );
+        ReportLogger.pass(
+                "Homepage URL verified successfully : "
+                        + driver.getCurrentUrl());
     }
 }

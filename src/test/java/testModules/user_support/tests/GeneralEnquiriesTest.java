@@ -8,50 +8,72 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class GeneralEnquiriesTest extends BaseTest {
 
     @Test
     public void verifyGeneralEnquiriesEmail() throws InterruptedException {
 
-        // Login
+        ReportLogger.step("Login with valid credentials");
+
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
+
+        loginPage.login(
+                "standard_user",
+                "secret_sauce");
 
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("inventory"),
                 "Login Failed");
 
-        // Open menu
-        InventoryPage inventoryPage = new InventoryPage(driver);
+        ReportLogger.pass("Login successful");
+
+        ReportLogger.step("Open application menu");
+
+        InventoryPage inventoryPage =
+                new InventoryPage(driver);
+
         inventoryPage.openMenu();
 
         Thread.sleep(1000);
 
-        // Click About
-        driver.findElement(By.id("about_sidebar_link")).click();
+        ReportLogger.pass("Menu opened successfully");
+
+        ReportLogger.step("Navigate to Sauce Labs website");
+
+        driver.findElement(
+                By.id("about_sidebar_link"))
+                .click();
 
         Thread.sleep(3000);
 
-        // Navigate directly to Contact Us page
+        ReportLogger.pass("Sauce Labs website opened");
+
+        ReportLogger.step("Open Contact Us page");
+
         driver.get("https://saucelabs.com/contact-us");
 
         Thread.sleep(3000);
 
-        // Verify page opened
         Assert.assertTrue(
                 driver.getCurrentUrl().contains("contact-us"),
                 "Contact Us page not opened");
 
-        // Verify General Enquiries email
-        WebElement enquiriesEmail = driver.findElement(
-                By.xpath("//*[contains(text(),'inquiries@saucelabs.com')]"));
+        ReportLogger.pass("Contact Us page opened successfully");
+
+        ReportLogger.step("Verify General Enquiries email");
+
+        WebElement enquiriesEmail =
+                driver.findElement(
+                        By.xpath(
+                                "//*[contains(text(),'inquiries@saucelabs.com')]"));
 
         Assert.assertTrue(
                 enquiriesEmail.isDisplayed(),
                 "inquiries@saucelabs.com is not displayed");
 
-        System.out.println(
-                "Verified General Enquiries Email : inquiries@saucelabs.com");
+        ReportLogger.pass(
+                "Verified email : inquiries@saucelabs.com");
     }
 }
