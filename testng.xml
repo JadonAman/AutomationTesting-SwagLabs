@@ -2,12 +2,13 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="UserSupportSuite">
+<suite name="UserSupportSuite" parallel="classes" thread-count="6">
 
-    <test name="UserSupportTests">
+    <test name="SwagLabsAutomationTesting">
 
         <classes>
-
+        	
+        	<!-- User Support Module -->
             <class name="testModules.user_support.tests.ContactSalesTest"/>
 
             <class name="testModules.user_support.tests.GeneralEnquiriesTest"/>
@@ -15,6 +16,57 @@
             <class name="testModules.user_support.tests.ContactSupportTest"/>
             
             <class name="testModules.user_support.tests.CommunityPageTest"/>
+            
+            <class name="testModules.user_support.tests.ContactSalesTestFail"/>
+			
+			<!-- Login Module -->
+			<class name="testModules.signing_in.tests.LoginPageElementsTest"/>
+			
+            <class name="testModules.signing_in.tests.EmptyPasswordTest"/>
+            
+            <class name="testModules.signing_in.tests.EmptyUsernameTest"/>
+            
+            <class name="testModules.signing_in.tests.InvalidPasswordTest"/>
+            
+            <class name="testModules.signing_in.tests.InvalidUsernameTest"/>
+            
+            <class name="testModules.signing_in.tests.LockedOutUserTest"/>
+            
+            <class name="testModules.signing_in.tests.ValidLoginTest"/>
+            
+            <!-- Purchase Module -->
+            <class name="testModules.purchase.tests.AddProductsToCartTest"/>
+            
+            <class name="testModules.purchase.tests.CheckoutTest"/>
+            
+            <class name="testModules.purchase.tests.ManageCartTest"/>
+            
+            <class name="testModules.purchase.tests.OrderConfirmationTest"/>
+            
+            <class name="testModules.purchase.tests.PaymentTest"/>
+            
+            <!-- Home Page -->
+            <class name="testModules.homepage.tests.HomePageDisplayTest"/>
+            
+            <class name="testModules.homepage.tests.HomePageElementsTest"/>
+            
+            <class name="testModules.homepage.tests.HomePageNavigationTest"/>
+            
+            <!-- Product Catalog Module -->
+
+			<class name="testModules.product_catalog.tests.A_to_Ztesting"/>
+			
+			<class name="testModules.product_catalog.tests.CategoryFilterTest"/>
+			
+			<class name="testModules.product_catalog.tests.CHECKSORTZATest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceHighToLowTest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceLowToHighTest"/>
+			
+			<class name="testModules.product_catalog.tests.PriceRangeTest"/>
+			
+			<class name="testModules.product_catalog.tests.ProductNameSearchTest"/>
 
         </classes>
 

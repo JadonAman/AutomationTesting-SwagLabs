@@ -6,13 +6,15 @@ import org.testng.annotations.Test;
 import base.BaseTest;
 import pages.InventoryPage;
 import pages.LoginPage;
+import utilities.ReportLogger;
 
 public class ContactSalesTest extends BaseTest {
 
     @Test
     public void verifyContactSalesPage() throws InterruptedException {
 
-        // Login
+        ReportLogger.step("Login with valid credentials");
+
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("standard_user", "secret_sauce");
 
@@ -20,23 +22,29 @@ public class ContactSalesTest extends BaseTest {
                 driver.getCurrentUrl().contains("inventory"),
                 "Login Failed");
 
-        // Open Menu
+        ReportLogger.pass("Login successful");
+
+        ReportLogger.step("Open application menu");
+
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.openMenu();
 
         Thread.sleep(1000);
 
-        // Click About
+        ReportLogger.pass("Menu opened successfully");
+
+        ReportLogger.step("Navigate to Sauce Labs website");
+
         driver.findElement(
                 org.openqa.selenium.By.id("about_sidebar_link"))
                 .click();
 
         Thread.sleep(3000);
 
-        System.out.println("Current URL : "
-                + driver.getCurrentUrl());
+        ReportLogger.pass("Sauce Labs website opened");
 
-        // Navigate directly to Contact Us page
+        ReportLogger.step("Open Contact Sales page");
+
         driver.get("https://saucelabs.com/contact-us");
 
         Thread.sleep(3000);
@@ -45,7 +53,6 @@ public class ContactSalesTest extends BaseTest {
                 driver.getCurrentUrl().contains("contact-us"),
                 "Contact Us page not opened");
 
-        System.out.println("Successfully navigated to Contact Us page");
-
+        ReportLogger.pass("Contact Sales page verified successfully");
     }
 }

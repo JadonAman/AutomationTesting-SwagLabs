@@ -13,18 +13,36 @@ public class ScreenshotUtils {
 
     public static String takeScreenshot(
             WebDriver driver,
-            String testName) {
+            String testName,
+            String status) {
 
-        File src = ((TakesScreenshot)driver)
+        File src = ((TakesScreenshot) driver)
                 .getScreenshotAs(OutputType.FILE);
 
-        String path =
+        String folderPath =
                 System.getProperty("user.dir")
                 + File.separator
                 + "Screenshots"
                 + File.separator
-                + testName
+                + status;
+
+        File folder = new File(folderPath);
+
+        if (!folder.exists()) {
+
+            folder.mkdirs();
+        }
+
+        String fileName =
+                testName
+                + "_"
+                + System.currentTimeMillis()
                 + ".png";
+
+        String path =
+                folderPath
+                + File.separator
+                + fileName;
 
         try {
 
